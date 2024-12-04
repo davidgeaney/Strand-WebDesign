@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --sea: 67, 107, 149;
+  --sea-light: 179, 200, 216;
+  
+  /* New Rich Color Palette */
+  --deep-ocean: 26, 54, 93;     /* Deep blue */
+  --coral: 255, 127, 108;       /* Vibrant coral */
+  --aqua: 79, 192, 208;         /* Bright aqua */
+  --sand: 242, 223, 187;        /* Warm sand */
+  --seafoam: 130, 205, 171;     /* Minty seafoam */
+  --twilight: 103, 95, 147;     /* Purple twilight */
+  --sunset: 251, 177, 150;      /* Soft sunset */
+  
+  /* Gradient Combinations */
+  --gradient-ocean: linear-gradient(135deg, rgb(var(--deep-ocean)) 0%, rgb(var(--aqua)) 100%);
+  --gradient-sunset: linear-gradient(135deg, rgb(var(--coral)) 0%, rgb(var(--sunset)) 100%);
+  --gradient-twilight: linear-gradient(135deg, rgb(var(--deep-ocean)) 0%, rgb(var(--twilight)) 100%);
+  --gradient-seafoam: linear-gradient(135deg, rgb(var(--aqua)) 0%, rgb(var(--seafoam)) 100%);
+  
+  /* New Modern Color Palette */
+  --bg-dark: 20, 20, 28;        /* Deep space background */
+  --accent-1: 255, 90, 95;      /* Electric coral */
+  --accent-2: 123, 97, 255;     /* Electric purple */
+  --accent-3: 71, 235, 179;     /* Neon mint */
+  --accent-4: 252, 210, 89;     /* Golden yellow */
+  --text-primary: 245, 245, 255; /* Soft white */
+  --text-secondary: 171, 171, 190; /* Muted lavender */
+  
+  /* Gradient Presets */
+  --gradient-main: linear-gradient(135deg, rgb(var(--accent-2)) 0%, rgb(var(--accent-1)) 100%);
+  --gradient-alt: linear-gradient(135deg, rgb(var(--accent-3)) 0%, rgb(var(--accent-2)) 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(var(--accent-2), 0.1) 0%, rgba(var(--accent-1), 0.1) 100%);
+  
+  /* Glow Effects */
+  --glow-1: 0 0 20px rgba(var(--accent-1), 0.3);
+  --glow-2: 0 0 20px rgba(var(--accent-2), 0.3);
+  --glow-3: 0 0 20px rgba(var(--accent-3), 0.3);
+  
+  /* Rich, Sophisticated Color Palette */
+  --bg-rich: 17, 23, 33;       /* Deep navy background */
+  --primary: 86, 104, 168;     /* Dusty blue */
+  --secondary: 168, 85, 247;   /* Rich purple */
+  --accent: 71, 235, 179;      /* Vibrant mint */
+  --highlight: 255, 107, 180;  /* Soft rose */
+  --surface: 23, 29, 40;       /* Slightly lighter navy for cards */
+  
+  /* Text Colors */
+  --text-primary: 236, 237, 238;   /* Off white */
+  --text-secondary: 156, 163, 175; /* Cool gray */
+  
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, rgba(var(--primary), 0.9) 0%, rgba(var(--secondary), 0.9) 100%);
+  --gradient-accent: linear-gradient(135deg, rgba(var(--accent), 0.9) 0%, rgba(var(--highlight), 0.9) 100%);
+  --gradient-surface: linear-gradient(135deg, rgba(var(--surface), 0.95) 0%, rgba(var(--bg-rich), 0.95) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(var(--bg-rich));
+  color: rgb(var(--text-primary));
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  min-height: 100dvh;
+  background-color: rgb(var(--bg-rich));
+  color: rgb(var(--text-primary));
+}
+
+/* Typography */
+.display-text {
+  font-family: 'Cormorant', serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.heading-text {
+  font-family: 'Cormorant', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Sand Texture */
+.sand-texture {
+  background-image: url('/textures/sand.png');
+  background-blend-mode: multiply;
+  background-color: rgb(var(--sand));
+}
+
+/* Wave Effect */
+.wave-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(var(--sea));
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.36, 0, 0.66, 1);
+  animation: wave 2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleX(0.8) translateX(-10%);
+  }
+  50% {
+    transform: scaleX(1) translateX(0);
+  }
+}
+
+/* Tide Animation */
+@keyframes tide {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.tide-float {
+  animation: tide 8s ease-in-out infinite;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Image Reveal */
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(var(--sand));
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.36, 0, 0.66, 1);
+}
+
+.image-reveal.reveal::after {
+  transform: scaleX(0);
+}
+
+/* Container */
+.container-custom {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--shell));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--sea-light));
+  border-radius: 4px;
+}
+
+/* Coastal Button */
+.btn-coastal {
+  background-color: rgb(var(--sea));
+  color: rgb(var(--shell));
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-coastal:hover {
+  background-color: rgb(var(--sea-light));
+}
+
+.btn-coastal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--shell), 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.btn-coastal:hover::after {
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+}
+
+.bg-300% {
+  background-size: 300% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 150% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+/* Custom background pattern */
+.bg-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(var(--primary), 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--primary), 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-attachment: fixed;
+}
+
+/* Utility classes for the new color scheme */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
