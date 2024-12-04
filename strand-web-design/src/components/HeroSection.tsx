@@ -88,7 +88,6 @@ export default function HeroSection() {
         <motion.div
           animate={{ opacity: 1 }}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           style={{ opacity }}
           className="max-w-7xl mx-auto"
