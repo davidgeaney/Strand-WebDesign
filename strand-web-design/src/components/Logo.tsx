@@ -63,34 +63,6 @@ export default function Logo() {
           }}
         />
       </svg>
-
-      {/* Animated Dots */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-[rgb(var(--sea))]"
-        initial={{ scale: 0 }}
-        animate={{ scale: [0, 1, 0] }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-        style={{
-          transform: 'translate(-50%, -50%)',
-        }}
-      />
-
-      {/* Text */}
-      <motion.div
-        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        <span className="text-[rgb(var(--sea))] font-light tracking-widest text-sm">
-          STRAND WEB DESIGN
-        </span>
-      </motion.div>
     </motion.div>
   );
 }

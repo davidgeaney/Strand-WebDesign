@@ -19,8 +19,8 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="heading-text text-4xl md:text-5xl mb-6 text-white">
-            Let's Create Something Amazing
+          <h2 className="font-poppins text-4xl md:text-5xl mb-6 text-white">
+            Let's Create Something Special
           </h2>
           <p className="text-xl text-gray-300">
             Ready to transform your digital presence? We're here to help bring your vision to life.
@@ -110,7 +110,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Email Us</h3>
-                    <p className="text-gray-300">hello@strandwebdesign.com</p>
+                    <p className="text-gray-300">strandwebdesigns@gmail.com</p>
                     <p className="text-sm text-gray-400 mt-2">We aim to respond within 24 hours</p>
                   </div>
                 </div>
@@ -127,8 +127,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Call Us</h3>
-                    <p className="text-gray-300">+353 (0) 123 456 789</p>
-                    <p className="text-sm text-gray-400 mt-2">Mon-Fri from 9am to 6pm</p>
+                    <p className="text-gray-300">+353 83 379 3342</p>
+                    <p className="text-sm text-gray-400 mt-2">24/7 Customer Support</p>
                   </div>
                 </div>
               </motion.div>
@@ -144,7 +144,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Visit Us</h3>
-                    <p className="text-gray-300">Dublin, Ireland</p>
+                    <p className="text-gray-300">Donegal, Ireland</p>
                     <p className="text-sm text-gray-400 mt-2">Available for in-person meetings</p>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function ContactSection() {
 
             {/* Trust Message */}
             <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 backdrop-blur-sm">
-              <h4 className="font-semibold text-white mb-3">Why Choose Us?</h4>
+              <h4 className="font-poppins font-semibold text-white mb-3">Why Choose Us?</h4>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[rgb(var(--sea-light))]" />

@@ -28,7 +28,7 @@ export default function TechStack() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-text text-4xl md:text-5xl mb-6 text-white">
+          <h2 className="font-poppins text-4xl md:text-5xl mb-6 text-white">
             Built with Modern Tech
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

@@ -125,7 +125,7 @@ export default function ProjectShowcase() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-text text-4xl md:text-5xl mb-6 text-white">
+          <h2 className="font-poppins text-4xl md:text-5xl mb-6 text-white">
             Featured Projects
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -220,7 +220,7 @@ export default function ProjectShowcase() {
                           ))}
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                      <h3 className="font-poppins text-xl text-white mb-4">{project.title}</h3>
                       <p className="text-gray-300">{project.description}</p>
                     </div>
 

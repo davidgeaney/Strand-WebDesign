@@ -94,7 +94,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         </motion.div>
 
         {/* Title and Description */}
-        <h3 className="text-2xl font-semibold mb-4 group-hover:text-[rgb(var(--sea-light))] transition-colors duration-500 text-white">
+        <h3 className="font-poppins text-2xl text-white mb-4">
           {service.title}
         </h3>
         <p className="text-gray-300 mb-6 group-hover:text-gray-400 transition-colors duration-500">
@@ -143,20 +143,15 @@ export default function ServicesGrid() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[rgb(var(--sea-light))] rounded-full opacity-10 blur-3xl" />
       </div>
 
-      <div className="container-custom relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="heading-text text-4xl md:text-5xl mb-6 text-white">
-            Services Tailored to Your Success
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            Services
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Elevate your digital presence with our comprehensive web solutions
+          <p className="font-sans text-xl text-gray-300 max-w-3xl mx-auto">
+            End-to-end website solutions designed to grow your business and elevate your brand.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (

@@ -62,6 +62,9 @@ export default function PortfolioGrid() {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="font-poppins text-4xl md:text-5xl mb-6 text-white">
+          Featured Projects
+        </h2>
         {filteredProjects.map((project) => (
           <div
             key={project.id}

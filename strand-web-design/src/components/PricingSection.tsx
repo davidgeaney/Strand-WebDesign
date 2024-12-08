@@ -6,7 +6,7 @@ import { FiCheck, FiArrowRight } from 'react-icons/fi';
 const plans = [
   {
     name: 'LUMP SUM',
-    price: '€2,999',
+    price: '€2000',
     description: 'One-time payment for a complete website build',
     gradient: 'from-[rgb(var(--primary))] to-[rgb(var(--secondary))]',
     features: [
@@ -18,12 +18,11 @@ const plans = [
       'Social Media Integration',
       'One-time Payment',
       '2 Months Support',
-      'Training Session'
     ]
   },
   {
     name: 'MONTHLY',
-    price: '€299',
+    price: '€100',
     description: 'Flexible monthly payments with ongoing support',
     gradient: 'from-[rgb(var(--accent))] to-[rgb(var(--highlight))]',
     features: [
@@ -35,12 +34,11 @@ const plans = [
       'Analytics Reporting',
       'Monthly Hosting Included',
       'Continuous Support',
-      'Monthly Strategy Call'
     ]
   },
   {
     name: 'E-COMMERCE',
-    price: '€4,999',
+    price: '€2,500',
     description: 'Complete online store setup and management',
     gradient: 'from-[rgb(var(--secondary))] to-[rgb(var(--highlight))]',
     features: [
@@ -52,7 +50,6 @@ const plans = [
       'Shopping Cart Setup',
       'Product Categories & Filters',
       '3 Months Support',
-      'Staff Training Sessions'
     ]
   }
 ];
@@ -71,13 +68,13 @@ export default function PricingSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-[rgb(var(--text-primary))] font-bold">
+          <h2 className="font-poppins text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-xl text-[rgb(var(--text-secondary))] max-w-3xl mx-auto">
-            Choose the perfect plan for your business needs
+          <p className="font-poppins text-xl text-gray-300 max-w-3xl mx-auto">
+            Quality web design doesn't have to break the bank. Choose a plan that works for your business.
           </p>
         </motion.div>
 
@@ -88,6 +85,7 @@ export default function PricingSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
             >
               <motion.div
                 whileHover={{ y: -5 }}
@@ -101,48 +99,57 @@ export default function PricingSection() {
                     style={{ background: `linear-gradient(135deg, ${plan.gradient})` }}
                   />
                   
-                  <h3 className="text-2xl font-bold text-[rgb(var(--text-primary))] mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-[rgb(var(--accent))]">{plan.price}</span>
-                    <span className="text-[rgb(var(--text-secondary))]">
+                  <h3 className="font-poppins text-2xl text-white mb-4">
+                    {plan.name}
+                  </h3>
+                  <div className="mb-6">
+                    <span className="font-poppins text-4xl text-[rgb(var(--accent))]">
+                      {plan.price}
+                    </span>
+                    <span className="font-poppins text-gray-400 ml-2">
                       {plan.name === 'MONTHLY' ? ' /month' : ''}
                     </span>
                   </div>
-                  <p className="text-[rgb(var(--text-secondary))]">{plan.description}</p>
+                  <p className="font-poppins text-gray-300">{plan.description}</p>
                 </div>
 
                 {/* Features */}
                 <div className="p-8 border-t border-[rgba(var(--primary),0.2)]">
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, i) => (
-                      <motion.li 
-                        key={feature}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 * i }}
-                        className="flex items-start gap-3 group"
-                      >
-                        <FiCheck className="w-5 h-5 mt-0.5 text-[rgb(var(--accent))]" />
-                        <span className="text-[rgb(var(--text-secondary))]">{feature}</span>
-                      </motion.li>
+                      <li key={i} className="font-poppins text-gray-300 flex items-center">
+                        <FiCheck className="w-5 h-5 text-[rgb(var(--sea))] mr-2" />
+                        {feature}
+                      </li>
                     ))}
                   </ul>
 
-                  <motion.a
-                    href="#contact"
-                    className="inline-flex items-center justify-center w-full gap-2 px-6 py-3 rounded-xl text-[rgb(var(--text-primary))] transition-all duration-300 relative overflow-hidden group"
+                  <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    className="w-full group relative flex items-center justify-center gap-2 px-6 py-3 rounded-lg overflow-hidden"
                   >
-                    {/* Button Background */}
-                    <div 
-                      className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300"
-                      style={{ background: `linear-gradient(135deg, ${plan.gradient})` }}
-                    />
+                    {/* Gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--sea))] to-[rgb(var(--sea-light))] opacity-90 group-hover:opacity-100 transition-opacity" />
                     
-                    <span className="relative">Get Started</span>
-                    <FiArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform duration-300" />
-                  </motion.a>
+                    {/* Content */}
+                    <span className="relative font-poppins text-white">
+                      Get Started
+                    </span>
+                    <svg 
+                      className="w-4 h-4 relative text-white transition-transform group-hover:translate-x-1" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                      />
+                    </svg>
+                  </motion.button>
                 </div>
 
                 {/* Highlight border on hover */}
@@ -161,7 +168,7 @@ export default function PricingSection() {
             { title: 'No Hidden Fees', text: 'Transparent pricing' },
             { title: 'Pay Your Way', text: 'Flexible payment options' },
             { title: 'Expert Support', text: 'Help when you need it' },
-            { title: 'Money Back', text: '30-day guarantee' }
+            { title: 'Risk-Free', text: 'Pay Only After Approval' }
           ].map((item, index) => (
             <motion.div
               key={item.title}
@@ -170,8 +177,8 @@ export default function PricingSection() {
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="text-center"
             >
-              <h4 className="text-[rgb(var(--accent))] font-semibold mb-2">{item.title}</h4>
-              <p className="text-[rgb(var(--text-secondary))] text-sm">{item.text}</p>
+              <h4 className="text-[rgb(var(--accent))] font-semibold font-poppins mb-2">{item.title}</h4>
+              <p className="text-[rgb(var(--text-secondary))] text-sm font-poppins">{item.text}</p>
             </motion.div>
           ))}
         </div>

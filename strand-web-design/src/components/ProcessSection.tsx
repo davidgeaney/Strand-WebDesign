@@ -5,29 +5,20 @@ import { FiCoffee, FiPenTool, FiLayout, FiMonitor, FiAward } from 'react-icons/f
 
 const steps = [
   {
-    icon: FiCoffee,
-    title: "Let's Talk Business",
-    description: "We'll get to know your goals, customers, and what makes your business special. Together, we'll map out a website strategy that works."
+    title: "Discovery & Planning",
+    description: "We start by understanding your goals, target audience, and unique requirements to create a tailored strategy."
   },
   {
-    icon: FiPenTool,
-    title: "Creative Magic",
-    description: "Watch your vision come to life as we design a website that looks amazing and connects with your ideal customers."
+    title: "Design & Prototyping",
+    description: "Our team crafts a modern, user-focused design that perfectly represents your brand and engages your visitors."
   },
   {
-    icon: FiLayout,
-    title: "See It In Action",
-    description: "Try out an interactive preview of your website. Click through, test features, and refine until it's perfect."
+    title: "Development & Testing",
+    description: "We bring your design to life with clean code and thorough testing to ensure everything works flawlessly."
   },
   {
-    icon: FiMonitor,
-    title: "Bringing It To Life",
-    description: "We'll build your site using reliable technology that's easy to maintain, keeping you updated every step of the way."
-  },
-  {
-    icon: FiAward,
-    title: "Ready For Success",
-    description: "Your site goes live! We'll ensure everything's perfect and show you how to make the most of your new digital presence."
+    title: "Launch & Support",
+    description: "Your site goes live with our continued support to ensure optimal performance and success."
   }
 ];
 
@@ -53,50 +44,65 @@ export default function ProcessSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="heading-text text-4xl md:text-5xl mb-6 text-white">
-            Your Journey to a Better Website
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Simple, transparent, and focused on getting you results. Here's how we'll work together to create your perfect website.
-          </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="font-poppins text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                Your Journey to a Better Website
+              </h2>
+              <p className="font-sans text-xl text-gray-300 max-w-3xl mx-auto">
+                Simple, transparent, and focused on getting you results. Here's how we'll work together to create your perfect website.
+              </p>
+            </div>
+
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[rgb(var(--sea))] to-transparent hidden md:block" />
+              
+              <div className="space-y-12">
+                {steps.map((step, index) => (
+                  <motion.div
+                    key={step.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    <div className="md:grid md:grid-cols-12 md:gap-8">
+                      {/* Step Number */}
+                      <div className="hidden md:flex md:col-span-2 justify-end">
+                        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[rgb(var(--sea))] text-white font-display text-2xl">
+                          {index + 1}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="md:col-span-10 bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-2xl">
+                        <div className="flex items-center gap-4 mb-4 md:hidden">
+                          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[rgb(var(--sea))] text-white font-display text-xl">
+                            {index + 1}
+                          </div>
+                          <h3 className="font-poppins text-xl text-white">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <div className="hidden md:block">
+                          <h3 className="font-poppins text-2xl text-white mb-4">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <p className="font-sans text-gray-300 leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              {/* Connector Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-[rgb(var(--sea))] to-[rgb(var(--sea-light))] opacity-20" />
-              )}
-
-              {/* Step Content */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-2xl h-full hover:bg-gray-800/80 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[rgb(var(--sea))] text-white font-semibold">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="text-gray-300">
-                  {step.description}
-                </p>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Process Highlights */}
         <div className="mt-32 grid md:grid-cols-3 gap-12 relative">
@@ -117,10 +123,10 @@ export default function ProcessSection() {
               {/* Gradient overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: 'var(--gradient-primary)' }} />
               
-              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+              <h3 className="font-poppins text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
                 You're In Control
               </h3>
-              <p className="text-[rgb(var(--text-secondary))] leading-relaxed">
+              <p className="font-sans text-[rgb(var(--text-secondary))] leading-relaxed">
                 Regular updates and feedback sessions keep you in the driver's seat
               </p>
             </div>
@@ -136,10 +142,10 @@ export default function ProcessSection() {
               {/* Gradient overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: 'var(--gradient-primary)' }} />
               
-              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+              <h3 className="font-poppins text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
                 No Surprises
               </h3>
-              <p className="text-[rgb(var(--text-secondary))] leading-relaxed">
+              <p className="font-sans text-[rgb(var(--text-secondary))] leading-relaxed">
                 Clear pricing and timelines, with regular progress updates
               </p>
             </div>
@@ -155,10 +161,10 @@ export default function ProcessSection() {
               {/* Gradient overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: 'var(--gradient-primary)' }} />
               
-              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+              <h3 className="font-poppins text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
                 Future-Proof
               </h3>
-              <p className="text-[rgb(var(--text-secondary))] leading-relaxed">
+              <p className="font-sans text-[rgb(var(--text-secondary))] leading-relaxed">
                 Built with modern tech that scales with your business
               </p>
             </div>

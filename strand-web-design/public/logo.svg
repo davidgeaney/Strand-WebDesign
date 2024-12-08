@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="140" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wave Line -->
+  <path
+    d="M30,60 Q45,45 60,60 Q75,75 90,60"
+    stroke="#2563eb"
+    stroke-width="3"
+    fill="none"
+  />
+  
+  <!-- S Letter -->
+  <path
+    d="M45,40 C60,40 75,40 75,50 C75,60 45,60 45,70 C45,80 60,80 75,80"
+    stroke="#2563eb"
+    stroke-width="4"
+    fill="none"
+    stroke-linecap="round"
+  />
+
+  <!-- Circular Border -->
+  <circle
+    cx="60"
+    cy="60"
+    r="55"
+    stroke="#93c5fd"
+    stroke-width="2"
+    fill="none"
+  />
+</svg>

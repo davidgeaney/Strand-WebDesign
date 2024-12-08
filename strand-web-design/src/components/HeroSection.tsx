@@ -42,6 +42,7 @@ export default function HeroSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      style={{ opacity }}
     >
       {/* Animated Background */}
       <div className="absolute inset-0">
@@ -86,7 +87,6 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 py-20">
         <motion.div
-          animate={{ opacity: 1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -118,27 +118,39 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
+          {/* Company Name */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-4 mb-20"
+          >
+            <h2 className="font-poppins text-xl md:text-2xl font-light tracking-[0.3em] text-[rgb(var(--sea))] opacity-90">
+              STRAND WEB DESIGN
+            </h2>
+          </motion.div>
+
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight"
+            className="font-poppins text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Grow Your Business
+            Big Agency Quality,
             <motion.span 
               className="block text-transparent bg-clip-text bg-gradient-to-r from-[rgb(var(--sea-light))] via-white to-[rgb(var(--sea-light))] bg-300% animate-shimmer"
             >
-              At A Price You'll Love
+              Small Business Prices.
             </motion.span>
           </motion.h1>
           
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
+            className="font-sans text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7 }}
           >
-            Beautiful, conversion-focused websites that fit your budget. No compromises on quality, just smart design at sensible prices.
+            Turn visitors into customers with smart design that reflects your brand and delivers results.
           </motion.p>
 
           <motion.div
@@ -149,7 +161,7 @@ export default function HeroSection() {
           >
             <motion.a 
               href="#contact" 
-              className="group relative px-10 py-4 rounded-lg font-medium text-[rgb(var(--text-primary))] min-w-[200px] text-center overflow-hidden"
+              className="group relative px-10 py-4 rounded-lg font-display text-sm uppercase tracking-wider text-[rgb(var(--text-primary))] min-w-[200px] text-center overflow-hidden"
               whileHover="hover"
               whileTap="tap"
             >
@@ -179,7 +191,7 @@ export default function HeroSection() {
               />
               {/* Text */}
               <motion.span 
-                className="relative block font-medium"
+                className="relative block"
                 variants={{
                   hover: {
                     y: -1,
@@ -187,13 +199,13 @@ export default function HeroSection() {
                   }
                 }}
               >
-                Start Your Project
+                Let's Get Started
               </motion.span>
             </motion.a>
             
             <motion.a 
               href="#work" 
-              className="group relative px-10 py-4 rounded-lg font-medium text-[rgb(var(--text-primary))] min-w-[200px] text-center"
+              className="group relative px-10 py-4 rounded-lg font-display text-sm uppercase tracking-wider text-[rgb(var(--text-primary))] min-w-[200px] text-center"
               whileHover="hover"
               whileTap="tap"
             >
@@ -232,7 +244,7 @@ export default function HeroSection() {
                   }
                 }}
               >
-                View Our Work
+                See Real Results
               </motion.span>
             </motion.a>
           </motion.div>
@@ -250,7 +262,7 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <span className="w-2 h-2 rounded-full bg-[rgb(var(--sea))]" />
-              <span>Modern Tech Stack</span>
+              <span className="font-sans">Modern Tech Stack</span>
             </motion.div>
             <motion.div 
               className="flex items-center gap-2"
@@ -258,7 +270,7 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <span className="w-2 h-2 rounded-full bg-[rgb(var(--sea))]" />
-              <span>Performance Focused</span>
+              <span className="font-sans">Performance Focused</span>
             </motion.div>
             <motion.div 
               className="flex items-center gap-2"
@@ -266,7 +278,7 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <span className="w-2 h-2 rounded-full bg-[rgb(var(--sea))]" />
-              <span>Scalable Solutions</span>
+              <span className="font-sans">Scalable Solutions</span>
             </motion.div>
           </motion.div>
         </motion.div>

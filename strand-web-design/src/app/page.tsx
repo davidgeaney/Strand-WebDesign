@@ -29,7 +29,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <h3 className="text-4xl font-bold text-white mb-2">250+</h3>
+              <h3 className="text-4xl font-bold text-white mb-2 font-poppins">250+</h3>
               <p className="text-white/80">Websites Launched</p>
             </motion.div>
             <motion.div 
@@ -38,7 +38,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-center"
             >
-              <h3 className="text-4xl font-bold text-white mb-2">98%</h3>
+              <h3 className="text-4xl font-bold text-white mb-2 font-poppins">98%</h3>
               <p className="text-white/80">Client Satisfaction</p>
             </motion.div>
             <motion.div 
@@ -47,7 +47,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center"
             >
-              <h3 className="text-4xl font-bold text-white mb-2">15+</h3>
+              <h3 className="text-4xl font-bold text-white mb-2 font-poppins">15+</h3>
               <p className="text-white/80">Design Awards</p>
             </motion.div>
             <motion.div 
@@ -56,7 +56,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center"
             >
-              <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
+              <h3 className="text-4xl font-bold text-white mb-2 font-poppins">24/7</h3>
               <p className="text-white/80">Support</p>
             </motion.div>
           </div>

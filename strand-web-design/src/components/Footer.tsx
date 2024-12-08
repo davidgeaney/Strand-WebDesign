@@ -34,9 +34,9 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: FiMail, text: 'hello@strandwebdesign.com' },
-  { icon: FiPhone, text: '+353 (0) 123 456 789' },
-  { icon: FiMapPin, text: 'Dublin, Ireland' }
+  { icon: FiMail, text: 'strandwebdesigns@gmail.com' },
+  { icon: FiPhone, text: '+353 83 379 3342' },
+  { icon: FiMapPin, text: 'Donegal, Ireland' }
 ];
 
 export default function Footer() {
