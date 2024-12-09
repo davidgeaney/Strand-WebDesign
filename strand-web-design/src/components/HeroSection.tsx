@@ -38,7 +38,7 @@ export default function HeroSection() {
   return (
     <motion.section 
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gray-900"
+      className="relative min-h-screen overflow-hidden bg-gray-900 py-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -85,10 +85,9 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 py-20">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           style={{ opacity }}
           className="max-w-7xl mx-auto"
